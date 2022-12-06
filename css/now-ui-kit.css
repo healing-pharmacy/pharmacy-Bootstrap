@@ -4685,7 +4685,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .bg-info {
-  background-color: #2CA8FF !important;
+  background-color: #08afee !important;
 }
 
 .bg-success {
@@ -5603,8 +5603,9 @@ img {
 }
 
 .index-page .page-header {
-  height: 125vh;
+  height: 1250vh;
 }
+
 
 .index-page .page-header .container>.content-center {
   top: 37%;
@@ -5613,7 +5614,7 @@ img {
 .index-page .page-header .category-absolute {
   position: absolute;
   top: 100vh;
-  margin-top: -60px;
+  margin-top: -600px;
   padding: 0 15px;
   width: 100%;
   color: rgba(255, 255, 255, 0.5);
@@ -5983,7 +5984,7 @@ img {
   min-height: 100vh;
   max-height: 999px;
   padding: 0;
-  color: #FFFFFF;
+  color: #08afee;
   position: relative;
   overflow: hidden;
 }
