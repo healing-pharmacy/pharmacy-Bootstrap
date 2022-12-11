@@ -12,7 +12,7 @@ class MobileNavbar {
         this.navLinks.forEach((link, index) => {
             console.log(index / 7 + 0.3);
             link.style.animation
-            ? (link.stlye.animation = "")
+            ? (link.stlye.animation = "oi")
             : (link.style.animation = `navLinkFade 0.5s ease forwards 0.3s`);
         });
     }
