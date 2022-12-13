@@ -29,11 +29,6 @@ nav {
     height: 9vh;
 }
 
-main {
-    background: url(bgMenu.jpg) no-repeat center center;
-    background-size: cover;
-    height: 92vh;
-}
 
 .nav-list {
     list-style: none;
