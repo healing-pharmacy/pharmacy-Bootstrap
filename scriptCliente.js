@@ -1,3 +1,11 @@
+const formulario = document.querySelector("form");
+const Icpf = document.querySelector(".cpf");
+const Inome = document.querySelector(".nome");
+const IdataNascimento = document.querySelector(".dataNascimento");
+const Iemail = document.querySelector(".email");
+const Iendereco = document.querySelector(".endereco");
+const Itelefone = document.querySelector(".telefone");
+
 $(function() {
     /* DataSources */
     var CPF = [
@@ -27,6 +35,29 @@ $(function() {
       .click(function(){
       $("#modalCadastro")
         .modal('show');
+    });
+
+    $(".btnAdcionar")
+      .click(function adcionar (){
+  
+        fetch ("http://localhost:8081/api/clientes",
+          {
+              headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+              },
+              method: "POST",
+              body: JSON.stringify({ 
+                  nome: Inome.value,
+                  cpf: Icpf.value,
+                  data_nascimento: IdataNascimento.value,
+                  email: Iemail.value,
+                  endereco: Iendereco.value,
+                  telefone: Itelefone.value,
+              })
+          })
+          .then(function (res) { console.log(res) })
+          .catch(function (res) { console.log(res) })
     });
     /* FIM Modais */
   

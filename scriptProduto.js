@@ -36,7 +36,7 @@ $(function() {
         .modal('show');
     });
 
-    $("link")
+    $(".btnAdcionar")
       .click(function adcionar (){
   
         fetch ("http://localhost:8081/api/produtos",
