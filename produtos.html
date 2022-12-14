@@ -117,11 +117,11 @@
             <div class="equal width fields">
               <div class="field">
                 <label>Quantidade</label>
-                <input type="text" placeholder="Ex.: 2">
+                <input type="text" class="quantidade" placeholder="Ex.: 2">
               </div>
               <div class="field">
                 <label>Nome</label>
-                <input type="text" placeholder="Ex.: paracetamol">
+                <input type="text" class="nome" placeholder="Ex.: Paracetamol">
               </div>
             </div>
 
@@ -129,7 +129,7 @@
               <div class="field">
                 <label>Marca</label>
                 <div id="dropdownMarcas" class="ui search selection dropdown">
-                  <input name="inputMarcas" type="hidden">
+                  <input name="inputMarcas" class="marca" type="hidden">
                   <i class="dropdown icon"></i>
                   <div class="default text">Ex.: Bayer</div>
                   <div class="menu">
@@ -141,7 +141,7 @@
               <div class="field">
                 <label>Categoria</label>
                 <div id="dropdownCategorias" class="ui multiple search selection dropdown">
-                  <input name="inputCategorias" type="hidden">
+                  <input name="inputCategorias" class="categoria" type="hidden">
                   <i class="dropdown icon"></i>
                   <div class="default text">Ex.: Gotas</div>
                   <div class="menu">
@@ -151,36 +151,14 @@
                 </div>
               </div>
             </div>
-
-            <div class="equal width fields">
-              <div class="field">
-                <label>Volume</label>
-                <input type="text" placeholder="Ex.: 200">
-              </div>
-              <div class="field">
-                <label>Medida</label>
-                <div id="dropdownMedida" class="ui search selection dropdown">
-                  <input name="inputMedidas" type="hidden">
-                  <i class="dropdown icon"></i>
-                  <div class="default text">Ex.: mg</div>
-                  <div class="menu">
-                    <div class="item" data-value="GR">ml</div>
-                    <div class="item" data-value="KG">mg</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div class="field">
               <label>Observações</label>
-              <textarea style="margin-top: 0px; margin-bottom: 0px; height: 112px;"></textarea>
+              <input style="margin-top: 0px; margin-bottom: 0px; height: 112px;" class="observacao">
             </div>
           </div>
         </div>
         <div class="actions">
-          <div class="ui teal right labeled icon button">
-            Salvar
-            <i class="checkmark icon"></i>
+          <button class="ui button right floated teal btnAdcionar">Adcionar</button>
           </div>
         </div>
       </div>
