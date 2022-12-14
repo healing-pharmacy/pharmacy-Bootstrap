@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title</title>
-    <link rel="stylesheet" href="styleMenu.css">
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="styleMenu.css">    
+    <script src="scriptFornecedor.js" defer></script> 
 </head>
-
-<body>
-     <header>
+  <body>
+    <header>
         <nav>
             <img src="../pharmacy-Bootstrap/img/letrah.png" alt="H">
             <a class="logo" href="menu.html">Healing Pharmacy</a>
@@ -20,11 +15,163 @@
                 <div class="Line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="/">Clientes</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
                 <li><a href="produtos.html">Produtos</a></li>
                 <li><a href="/">Fornecedores</a></li>
             </ul>
         </nav>
      </header>
+    <div class="ui container">
+      <!-- Segmento de Filtro -->
+      <div class="ui segment">
+        <p class="ui teal ribbon label">
+          <i class="filter icon"></i> Filtros
+        </p>
 
+        <div id="formFiltro" class="ui form">
+          <div class="three fields">
+            <div class="field">
+              <label><i class="barcode icon"></i>CNPJ</label>
+              <div id="filtroCNPJ" class="ui search">
+                <div class="ui input">
+                  <input class="prompt" type="text" placeholder="Ex.: 39844118000131">
+                </div>
+                <div class="results"></div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label><i class="box icon"></i>Produto</label>
+              <div id="filtroProduto" class="ui search">
+                <div class="ui input">
+                  <input class="prompt" type="text" placeholder="Ex.: paracetamol">
+                </div>
+                <div class="results"></div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label><i class="tag icon"></i>Nome</label>
+              <div id="filtroNome" class="ui search">
+                <div class="ui input ">
+                  <input class="prompt" type="text" placeholder="Ex.: Araci Carmoriz Macário da Mota">
+                </div>
+                <div class="results"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FIM Segmento de Filtro -->
+
+      <h1>Fornecedores</h1>
+
+      <!-- Tabela de Produtos cadastrados -->
+      <table class="ui table">
+        <thead>
+          <tr>
+            <th>CNPJ</th>
+            <th>Nome</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>84427367000186</td>
+            <td>Cauã Saldanha Portela Facre</td>
+            <td>
+              <button class="ui button basic teal btnCadastro">
+                <i class="pencil alternative icon"></i> Editar
+              </button>
+              <button class="ui button basic red btnExcluir">
+                <i class="close icon"></i> Excluir
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>35497534000150</td>
+            <td>Mauro Leandro Carmanin Castro</td>
+            <td>
+              <button class="ui button basic teal btnCadastro">
+                <i class="pencil alternative icon"></i> Editar
+              </button>
+              <button class="ui button basic red btnExcluir">
+                <i class="close icon"></i> Excluir
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- FIM Tabela de Produtos cadastrados -->
+
+      <button class="ui button right floated teal btnCadastro">Adicionar Fornecedor</button>
+
+      <!-- Modal de CRUD de Produtos -->
+      <div id="modalCadastro" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+          Cadastro de Fornecedor
+        </div>
+        <div class="content">
+          <div class="ui form">
+            <div class="equal width fields">
+              <div class="field">
+                <label>CNPJ</label>
+                <input type="text" placeholder="Ex.: 84427367000186">
+              </div>
+              <div class="field">
+                <label>Nome</label>
+                <input type="text" placeholder="Ex.: Leonardo">
+              </div>
+            </div>
+
+            <div class="equal width fields">
+              <div class="field">
+                <label>Produto que fornecido</label>
+                <input type="text" placeholder="Ex.: Paracetamol">
+              </div>
+              <div class="field">
+                
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Observações</label>
+              <textarea style="margin-top: 0px; margin-bottom: 0px; height: 112px;"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <div class="ui teal right labeled icon button">
+            Salvar
+            <i class="checkmark icon"></i>
+          </div>
+        </div>
+      </div>
+     
+      <div id="modalConfirmacaoExclusao" class="ui basic modal">
+        <div class="ui icon header">
+          <i class="archive icon"></i>
+          Exclusão do Fornecedor
+        </div>
+        <div class="content">
+          <p>Tem certeza que deseja excluir o Fornecedor "Leonardo"? Esta ação não pode ser revertida.</p>
+        </div>
+        <div class="actions">
+          <div class="ui red basic cancel inverted button">
+            <i class="remove icon"></i>
+            Não
+          </div>
+          <div class="ui green ok inverted button">
+            <i class="checkmark icon"></i>
+            Sim
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.4.1/semantic.min.js"></script>
 </html>
