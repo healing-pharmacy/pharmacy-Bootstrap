@@ -1,0 +1,213 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="styleMenu.css"> 
+    <script src="scriptProduto.js" defer></script> 
+</head>
+  <body>
+    <header>
+        <nav>
+            <img src="../pharmacy-Bootstrap/img/letrah.png" alt="H">
+            <a class="logo" href="menu.html">Healing Pharmacy</a>
+            <div class="mobile-menu">
+                <div class="Line1"></div>
+                <div class="Line2"></div>
+                <div class="Line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="/">Fornecedores</a></li>
+            </ul>
+        </nav>
+     </header>
+    <div class="ui container">
+      <!-- Segmento de Filtro -->
+      <div class="ui segment">
+        <p class="ui teal ribbon label">
+          <i class="filter icon"></i> Filtros
+        </p>
+
+        <div id="formFiltro" class="ui form">
+          <div class="three fields">
+            <div class="field">
+              <label><i class="barcode icon"></i>Quantidade</label>
+              <div id="filtroCodigoBarra" class="ui search">
+                <div class="ui input">
+                  <input class="prompt" type="text" placeholder="Ex.: 2">
+                </div>
+                <div class="results"></div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label><i class="box icon"></i>Produto</label>
+              <div id="filtroProduto" class="ui search">
+                <div class="ui input">
+                  <input class="prompt" type="text" placeholder="Ex.: paracetamol">
+                </div>
+                <div class="results"></div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label><i class="tag icon"></i>Categoria</label>
+              <div id="filtroCategorias" class="ui search">
+                <div class="ui input ">
+                  <input class="prompt" type="text" placeholder="Ex.: Gotas">
+                </div>
+                <div class="results"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FIM Segmento de Filtro -->
+
+      <h1>Produtos</h1>
+
+      <!-- Tabela de Produtos cadastrados -->
+      <table class="ui table">
+        <thead>
+          <tr>
+            <th>Quantidade</th>
+            <th>Nome</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>7</td>
+            <td>Paracetamol 200 mg/mL</td>
+            <td>
+              <button class="ui button basic teal btnCadastro">
+                <i class="pencil alternative icon"></i> Editar
+              </button>
+              <button class="ui button basic red btnExcluir">
+                <i class="close icon"></i> Excluir
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Nitrofurantoína 100mg</td>
+            <td>
+              <button class="ui button basic teal btnCadastro">
+                <i class="pencil alternative icon"></i> Editar
+              </button>
+              <button class="ui button basic red btnExcluir">
+                <i class="close icon"></i> Excluir
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- FIM Tabela de Produtos cadastrados -->
+
+      <button class="ui button right floated teal btnCadastro">Novo Produto</button>
+
+      <!-- Modal de CRUD de Produtos -->
+      <div id="modalCadastro" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+          Cadastro de Produto
+        </div>
+        <div class="content">
+          <div class="ui form">
+            <div class="equal width fields">
+              <div class="field">
+                <label>Quantidade</label>
+                <input type="text" placeholder="Ex.: 2">
+              </div>
+              <div class="field">
+                <label>Nome</label>
+                <input type="text" placeholder="Ex.: paracetamol">
+              </div>
+            </div>
+
+            <div class="equal width fields">
+              <div class="field">
+                <label>Marca</label>
+                <div id="dropdownMarcas" class="ui search selection dropdown">
+                  <input name="inputMarcas" type="hidden">
+                  <i class="dropdown icon"></i>
+                  <div class="default text">Ex.: Bayer</div>
+                  <div class="menu">
+                    <div class="item" data-value="HL">Bayer</div>
+                    <div class="item" data-value="HM">Roche</div>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label>Categoria</label>
+                <div id="dropdownCategorias" class="ui multiple search selection dropdown">
+                  <input name="inputCategorias" type="hidden">
+                  <i class="dropdown icon"></i>
+                  <div class="default text">Ex.: Gotas</div>
+                  <div class="menu">
+                    <div class="item" data-value="GT">Gotas</div>
+                    <div class="item" data-value="CO">Comprimidos</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="equal width fields">
+              <div class="field">
+                <label>Volume</label>
+                <input type="text" placeholder="Ex.: 200">
+              </div>
+              <div class="field">
+                <label>Medida</label>
+                <div id="dropdownMedida" class="ui search selection dropdown">
+                  <input name="inputMedidas" type="hidden">
+                  <i class="dropdown icon"></i>
+                  <div class="default text">Ex.: mg</div>
+                  <div class="menu">
+                    <div class="item" data-value="GR">ml</div>
+                    <div class="item" data-value="KG">mg</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Observações</label>
+              <textarea style="margin-top: 0px; margin-bottom: 0px; height: 112px;"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <div class="ui teal right labeled icon button">
+            Salvar
+            <i class="checkmark icon"></i>
+          </div>
+        </div>
+      </div>
+     
+      <div id="modalConfirmacaoExclusao" class="ui basic modal">
+        <div class="ui icon header">
+          <i class="archive icon"></i>
+          Exclusão de Produto
+        </div>
+        <div class="content">
+          <p>Tem certeza que deseja excluir o produto "Paracetamol gotas 200 mg/mL"? Esta ação não pode ser revertida.</p>
+        </div>
+        <div class="actions">
+          <div class="ui red basic cancel inverted button">
+            <i class="remove icon"></i>
+            Não
+          </div>
+          <div class="ui green ok inverted button">
+            <i class="checkmark icon"></i>
+            Sim
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.4.1/semantic.min.js"></script>
+</html>
