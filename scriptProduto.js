@@ -1,3 +1,10 @@
+const formulario = document.querySelector("form");
+const Inome = document.querySelector(".nome");
+const Imarca = document.querySelector(".marca");
+const Icategoria = document.querySelector(".categoria");
+const Iquantidade = document.querySelector(".quantidade");
+const Iobservacao = document.querySelector(".observacao");
+
 $(function() {
     /* DataSources */
     var quantidade = [
@@ -27,6 +34,28 @@ $(function() {
       .click(function(){
       $("#modalCadastro")
         .modal('show');
+    });
+
+    $(".btnAdcionar")
+      .click(function adcionar (){
+  
+        fetch ("http://localhost:8081/api/produtos",
+          {
+              headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+              },
+              method: "POST",
+              body: JSON.stringify({ 
+                  nome: Inome.value,
+                  marca: Imarca.value,
+                  categoria: Icategoria.value,
+                  quantidade: Iquantidade.value,
+                  descricao: Iobservacao.value,
+              })
+          })
+          .then(function (res) { console.log(res) })
+          .catch(function (res) { console.log(res) })
     });
     /* FIM Modais */
   
