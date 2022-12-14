@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title</title>
-    <link rel="stylesheet" href="styleClientes.css">
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="styleMenu.css"> 
+    <script src="scriptCliente.js" defer></script> 
 </head>
-
-<body>
-     <header>
+  <body>
+    <header>
         <nav>
             <img src="../pharmacy-Bootstrap/img/letrah.png" alt="H">
             <a class="logo" href="menu.html">Healing Pharmacy</a>
@@ -26,10 +21,166 @@
             </ul>
         </nav>
      </header>
+    <div class="ui container">
+      <!-- Segmento de Filtro -->
+      <div class="ui segment">
+        <p class="ui teal ribbon label">
+          <i class="filter icon"></i> Filtros
+        </p>
 
-     <a>Hello</a>
-     <main></main> 
-     <script src="mobile-navbar.js"></script> 
-</body>
+        <div id="formFiltro" class="ui form">
+          <div class="three fields">
+            <div class="field">
+              <label><i class="barcode icon"></i>CPF</label>
+              <div id="filtroCPF" class="ui search">
+                <div class="ui input">
+                  <input class="prompt" type="text" placeholder="Ex.: 169.577.232-67">
+                </div>
+                <div class="results"></div>
+              </div>
+            </div>
 
+            <div class="field">
+              <label><i class="box icon"></i>Nome</label>
+              <div id="filtroNome" class="ui search">
+                <div class="ui input">
+                  <input class="prompt" type="text" placeholder="Ex.: Gustavo">
+                </div>
+                <div class="results"></div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label><i class="tag icon"></i>Telefone</label>
+              <div id="filtrotelefone" class="ui search">
+                <div class="ui input ">
+                  <input class="prompt" type="text" placeholder="Ex.: (62)98215-1155">
+                </div>
+                <div class="results"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FIM Segmento de Filtro -->
+
+      <h1>Clientes</h1>
+
+      <!-- Tabela de Produtos cadastrados -->
+      <table class="ui table">
+        <thead>
+          <tr>
+            <th>CPF</th>
+            <th>Nome</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>062.062.019-61</td>
+            <td>Lucas Rogerio Rocci </td>
+            <td>
+              <button class="ui button basic teal btnCadastro">
+                <i class="pencil alternative icon"></i> Editar
+              </button>
+              <button class="ui button basic red btnExcluir">
+                <i class="close icon"></i> Excluir
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>878.867.242-59</td>
+            <td>João Carlos Fernandes</td>
+            <td>
+              <button class="ui button basic teal btnCadastro">
+                <i class="pencil alternative icon"></i> Editar
+              </button>
+              <button class="ui button basic red btnExcluir">
+                <i class="close icon"></i> Excluir
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- FIM Tabela de Produtos cadastrados -->
+
+      <button class="ui button right floated teal btnCadastro">Adicionar Cliente</button>
+
+      <!-- Modal de CRUD de Produtos -->
+      <div id="modalCadastro" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+          Cadastro de Cliente
+        </div>
+        <div class="content">
+          <div class="ui form">
+            <div class="equal width fields">
+              <div class="field">
+                <label>CPF</label>
+                <input type="text" placeholder="Ex.: 290.098.291-55">
+              </div>
+              <div class="field">
+                <label>Nome</label>
+                <input type="text" placeholder="Ex.: luiz">
+              </div>
+            </div>
+
+            <div class="equal width fields">
+                             <div class="field">
+                  <label>Data de nascimento:</label>
+                  <input type="date" name="date" class="form-control">
+                              </div>
+            </div>
+<p></p>  
+<div class="field">
+    <label>Idade:</label>
+    <input type="text" placeholder="Ex.: 15 anos ">
+  </div>
+              <div class="field">
+                <label>Telefone</label>
+                <input type="text" placeholder="Ex.: (62)98215-1155">
+              </div>
+              <div class="field">
+                <label>Email</label>
+                <input type="text" placeholder="Ex.: Email">
+                
+             
+                </div>
+              </div>
+            </div>
+            <div class="actions">
+                <div class="ui teal right labeled icon button">
+                  Salvar
+                  <i class="checkmark icon"></i>
+                </div>
+              </div>
+          </div>
+        </div>
+             </div>
+     
+      <div id="modalConfirmacaoExclusao" class="ui basic modal">
+        <div class="ui icon header">
+          <i class="archive icon"></i>
+          Exclusão do Cliente
+        </div>
+        <div class="content">
+          <p>Tem certeza que deseja excluir o Cliente "João"? Esta ação não pode ser revertida.</p>
+        </div>
+        <div class="actions">
+          <div class="ui red basic cancel inverted button">
+            <i class="remove icon"></i>
+            Não
+          </div>
+          <div class="ui green ok inverted button">
+            <i class="checkmark icon"></i>
+            Sim
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.4.1/semantic.min.js"></script>
 </html>
