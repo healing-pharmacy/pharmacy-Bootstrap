@@ -1,26 +1,28 @@
 const formulario = document.querySelector("form");
-const Icpf = document.querySelector(".cpf");
-const Inome = document.querySelector(".nome");
-const IdataNascimento = document.querySelector(".dataNascimento");
+const Icnpj = document.querySelector(".cnpj");
+const InomeFantasia = document.querySelector(".nomeFantasia");
+const IrazaoSocial = document.querySelector(".razaoSocial");
 const Iemail = document.querySelector(".email");
 const Iendereco = document.querySelector(".endereco");
 const Itelefone = document.querySelector(".telefone");
+const Iresponsavel  = document.querySelector(".responsavel");
+const Iobservacao = document.querySelector(".observacao");
 
 $(function() {
     /* DataSources */
-    var CPF = [
-      { title: '062.062.019-61' },
-      { title: '878.867.242-59' }
+    var CNPJ = [
+      { title: '84427367000186' },
+      { title: '35497534000150' }
     ];
   
     var Nome = [
-      { title: 'Lucas Rogerio Rocci' },
-      { title: 'João Carlos Fernandes' }
+      { title: 'Cauã Saldanha Portela Facre' },
+      { title: 'Mauro Leandro Carmanin Castro' }
     ];
   
-    var telefone = [
-      { title: '(62) 3093-1878' },
-      { title: '(62) 3261-9341' }
+    var Produto = [
+      { title: 'Paracetamol' },
+      { title: 'Dipirona' }
     ];
     /* FIM DataSources */
   
@@ -40,7 +42,7 @@ $(function() {
     $(".btnAdcionar")
       .click(function adcionar (){
   
-        fetch ("http://localhost:8081/api/clientes",
+        fetch ("http://localhost:8081/api/fornecedor",
           {
               headers: {
                   'Accept': 'application/json',
@@ -48,12 +50,14 @@ $(function() {
               },
               method: "POST",
               body: JSON.stringify({ 
-                  nome: Inome.value,
-                  cpf: Icpf.value,
+                  cnpj: Icnpj.value,
+                  razao_social: IrazaoSocial.value,
+                  nome_fantasia: InomeFantasia.value,
                   telefone: Itelefone.value,
-                  data_nascimento: IdataNascimento.value,
                   endereco: Iendereco.value,
                   email: Iemail.value,
+                  responsavel: Iresponsavel.value,
+                  observacao: Iobservacao.value,
               })
           })
           .then(function (res) { console.log(res) })
@@ -62,9 +66,9 @@ $(function() {
     /* FIM Modais */
   
     /* Filtros */
-    $('#filtroCPF')
+    $('#filtroCNPJ')
       .search({
-      source: CPF
+      source: CNPJ
     })
   
     $('#filtroNome')
@@ -72,14 +76,14 @@ $(function() {
       source: Nome
     })
   
-    $('#filtrotelefone')
+    $('#filtroProduto')
       .search({
-      source: telefone
+      source: Produto
     })
     /* FIM Filtros */
   
     /* DropDowns */
-    $('#dropdowntelefone')
+    $('#dropdownProduto')
       .dropdown({
       allowAdditions: true
     });

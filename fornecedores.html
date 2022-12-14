@@ -34,14 +34,14 @@
               <label><i class="barcode icon"></i>CNPJ</label>
               <div id="filtroCNPJ" class="ui search">
                 <div class="ui input">
-                  <input class="prompt" type="text" placeholder="Ex.: 39844118000131">
+                  <input class="cnpj" type="text" placeholder="Ex.: 398.441/0001-31">
                 </div>
                 <div class="results"></div>
               </div>
             </div>
 
             <div class="field">
-              <label><i class="box icon"></i>Produto</label>
+              <label><i class="box icon"></i>Razão Social</label>
               <div id="filtroProduto" class="ui search">
                 <div class="ui input">
                   <input class="prompt" type="text" placeholder="Ex.: paracetamol">
@@ -51,7 +51,7 @@
             </div>
 
             <div class="field">
-              <label><i class="tag icon"></i>Nome</label>
+              <label><i class="tag icon"></i>Nome Fantasia</label>
               <div id="filtroNome" class="ui search">
                 <div class="ui input ">
                   <input class="prompt" type="text" placeholder="Ex.: Araci Carmoriz Macário da Mota">
@@ -117,34 +117,48 @@
             <div class="equal width fields">
               <div class="field">
                 <label>CNPJ</label>
-                <input type="text" placeholder="Ex.: 84427367000186">
+                <input type="text" class="cnpj" placeholder="Ex.: 84427367000186">
               </div>
               <div class="field">
-                <label>Nome</label>
-                <input type="text" placeholder="Ex.: Leonardo">
+                <label>Responsavel</label>
+                <input type="text" class="responsavel" placeholder="Ex.: Leonardo">
               </div>
             </div>
 
             <div class="equal width fields">
               <div class="field">
-                <label>Produto que fornecido</label>
-                <input type="text" placeholder="Ex.: Paracetamol">
+                <label>Razão Social</label>
+                <input type="text" class="razaoSocial" placeholder="Ex.: Madeiros Medicamentos LTDA">
               </div>
               <div class="field">
-                
+                <label>Nome Fantasia</label>
+                <input type="text" class="nomeFantasia" placeholder="Ex.: Medicamentos Escolha certa">
               </div>
             </div>
 
             <div class="field">
+              <label>Email</label>
+              <input type="text" class="email" placeholder="Ex.: seunome@email.com">
+              </div>
+
+            <div class="field">
+              <label>Telefone</label>
+              <input type="text" class="telefone" placeholder="Ex.: (62)98215-1155">
+            </div>
+
+            <div class="field">
+              <label>Endereco</label>
+              <input type="text" class="endereco" placeholder="Ex.: Rua das couves">
+            </div>
+
+            <div class="field">
               <label>Observações</label>
-              <textarea style="margin-top: 0px; margin-bottom: 0px; height: 112px;"></textarea>
+              <input style="margin-top: 0px; margin-bottom: 0px; height: 112px;" class="observacao">
             </div>
           </div>
         </div>
         <div class="actions">
-          <div class="ui teal right labeled icon button">
-            Salvar
-            <i class="checkmark icon"></i>
+          <button style="margin-bottom: 10px;" class="ui button right floated teal btnAdcionar">Adcionar</button>
           </div>
         </div>
       </div>
