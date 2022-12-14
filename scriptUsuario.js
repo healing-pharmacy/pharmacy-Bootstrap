@@ -1,7 +1,6 @@
 const formulario = document.querySelector("form");
 const Inome = document.querySelector(".nome");
 const Iemail = document.querySelector(".email");
-const Itipo = document.querySelector(".tipo");
 const Isenha = document.querySelector(".senha");
 
 function cadastrar (){
@@ -17,7 +16,6 @@ function cadastrar (){
                 username: Inome.value,
                 email: Iemail.value,
                 password: Isenha.value,
-                /*tipo: Itipo.value,*/
             })
         })
         .then(function (res) { console.log(res) })
@@ -28,7 +26,7 @@ function limpar () {
     Inome.value = "";
     Iemail.value = "";
     Isenha.value = "";
-    Itipo.value = "";
+    //Itipo.value = "";
 };
 
 formulario.addEventListener('submit', function (event) {
