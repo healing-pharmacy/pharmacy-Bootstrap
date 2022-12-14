@@ -14,10 +14,10 @@ function cadastrar (){
             },
             method: "POST",
             body: JSON.stringify({ 
-                nome: Inome.value,
+                username: Inome.value,
                 email: Iemail.value,
-                senha: Isenha.value,
-                tipo: Itipo.value,
+                password: Isenha.value,
+                /*tipo: Itipo.value,*/
             })
         })
         .then(function (res) { console.log(res) })
@@ -35,5 +35,5 @@ formulario.addEventListener('submit', function (event) {
     event.preventDefault();
 
     cadastrar();
-    limpar()
+    //limpar()
 });
