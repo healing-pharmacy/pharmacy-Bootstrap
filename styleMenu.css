@@ -29,10 +29,13 @@ nav {
     height: 9vh;
 }
 
+main h2{}
 main {
     background: url(bgMenu.jpg) no-repeat center center;
     background-size: cover;
     height: 92vh;
+    text-align: center;
+font-family: 'Courier New', Courier, monospace; color: #fff;
 }
 
 .nav-list {
